@@ -1,0 +1,21 @@
+1.查看相关文档以及芯片手册
+①根据查看芯片手册以及原理图得知引脚为GPIO4_19;
+②可以通过跳线来设置是否重复触发，默认不重复触发；
+
+2.确定所需功能
+①配置GPIO4_19的引脚方向；
+②只需配置GPIO4_19一个引脚；
+
+3.编程思路
+①使用中断；
+②不使用中断，使用内核线程；
+
+4.相关资源的配置
+①配置使用中断的设备树；
+②创建一个file_operations结构体：成员为 open read poll；
+③建立设备平台platform_drive；
+④申请中断函数；完成 read poll 相关驱动的编写；
+
+5.编写完成以及测试及总结
+
+wget --no-check-certificate https://weidongshan.coding.net/p/DevelopmentEnvConf/d/DevelopmentEnvConf/git/raw/master/imx6ullModule/app_bin/SR501/getSignal
